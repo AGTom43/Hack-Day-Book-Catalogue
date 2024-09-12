@@ -29,7 +29,6 @@ const BookCatalogue = () => {
         setError('Could not fetch books');
       }
     };
-
     fetchBooks();
   }, []);
 
@@ -38,13 +37,17 @@ const BookCatalogue = () => {
       <h1>All Catalogued Books</h1>
       <p>Here you can find all the books that have been logged by Fivium Employees</p>
       <div className="book-grid">
-        {books.map((book, index) => (
-          <CataloguedBookCard
-            key={book.bookId}
-            bookId={book.bookId}
-            bookAddedBy={book.loggerName}
-          />
-        ))}
+        {books.length > 0 ? (
+          books.map((book, index) => (
+            <CataloguedBookCard
+              key={book.bookId}
+              bookId={book.bookId}
+              bookAddedBy={book.loggerName}
+            />
+          ))
+        )  : (
+          <p>No reviews yet.</p>
+          )}
       </div>
     </div>
   );

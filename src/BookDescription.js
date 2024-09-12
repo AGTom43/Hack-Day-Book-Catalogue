@@ -36,10 +36,6 @@ const BookDescription = ({ bookId }) => {
   if (error) return <div>{error}</div>;
   if (!book) return <div>Loading...</div>;
 
-  const BOOK_1_ADDED_BY = "Akhil Tom"
-
-  const ID_TO_LINK = `https://books.google.co.uk/books?id=${bookId}`
-
   const { title, authors, imageLinks, description } = book.volumeInfo;
 
   // Function to clean HTML description

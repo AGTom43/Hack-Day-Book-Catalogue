@@ -36,7 +36,7 @@ const CataloguedBookCard = ({ bookId, bookAddedBy }) => {
   }, [bookId]);
 
   if (error) return <div>{error}</div>;
-  if (!book) return <div>Loading...</div>;
+  if (!book) return <div>No Books Catalogued</div>;
 
   const { title, authors, imageLinks } = book.volumeInfo;
 

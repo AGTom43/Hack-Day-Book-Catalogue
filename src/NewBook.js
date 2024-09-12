@@ -39,7 +39,7 @@ const NewBook = ({bookId}) => {
           />
         </label>
 
-        <button type="submit">Submit Review</button>
+        <button type="submit">Catalogue Book</button>
       </form>
     </div>
   );
