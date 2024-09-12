@@ -29,7 +29,7 @@ const CataloguedBookCard = ({ bookId, bookAddedBy }) => {
   };
 
   React.useEffect(() => {
-    const id = extractBookId(bookId);
+    const id = bookId;
     if (id) {
       fetchBookDetails(id);
     }
@@ -52,7 +52,7 @@ const CataloguedBookCard = ({ bookId, bookAddedBy }) => {
       <h3>{title}</h3>
       <p>Author: {authors ? authors.join(", ") : "Unknown Author"}</p>
       <p>Logged By: {ADDED_BY}</p>
-      <Link to={`/books/${extractBookId(bookId)}/`}>See All Reviews</Link>
+      <Link to={`/books/${bookId}/`}>See All Reviews</Link>
     </div>
   );
 };

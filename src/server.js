@@ -18,6 +18,15 @@ app.get('/reviews', (req, res) => {
   });
 });
 
+app.get('/books', (req, res) => {
+  fs.readFile(path.join(__dirname, 'catalogued_books.txt'), 'utf8', (err, data) => {
+    if (err) {
+      return res.status(500).json({ error: 'Could not read file' });
+    }
+    res.json({ content: data });
+  });
+});
+
 // Your review endpoint here
 app.post('/api/reviews', (req, res) => {
   const { bookId, reviewerName, sentiment, review, date } = req.body;
